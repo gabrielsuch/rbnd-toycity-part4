@@ -6,7 +6,26 @@ module Analyzable
   end
 
   def print_report(products)
-    'Report has been printed'
+    print_title "Inventory by Brand:"
+
+    count_by_brand(products).each do |key, value|
+      puts "#{key}: #{value}"
+    end
+
+    print_title "Inventory by Name:"
+
+    count_by_name(products).each do |key, value|
+      puts "#{key}: #{value}"
+    end
+
+    print_title "Average Price: #{average_price(products)}"
+  end
+
+  private def print_title(title)
+    puts
+    puts "*" * 30
+    puts title
+    puts "*" * 30
   end
 
   def count_by_brand(products)
