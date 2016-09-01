@@ -19,6 +19,8 @@ module Analyzable
     end
 
     print_title "Average Price: #{average_price(products)}"
+
+    "Hey Boss: the report has been printed! :-)"
   end
 
   private def print_title(title)

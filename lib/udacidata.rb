@@ -36,7 +36,9 @@ class Udacidata
   end
 
   def self.find(id)
-    all.find { |product| product.id == id }
+    result = all.find { |product| product.id == id }
+    raise ProductNotFoundError, "Product with #{id} was not found" unless result
+    result
   end
 
   def self.destroy(id)
