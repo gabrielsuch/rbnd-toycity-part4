@@ -13,4 +13,8 @@ module Analyzable
     products.each_with_object(Hash.new(0)) { |product, counters| counters[product.brand] += 1 }
   end
 
+  def count_by_name(products)
+    products.each_with_object(Hash.new(0)) { |product, counters| counters[product.name] += 1 }
+  end
+
 end

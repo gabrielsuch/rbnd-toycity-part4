@@ -52,7 +52,7 @@ class Udacidata
   end
 
   def self.where(args = {})
-    all.select { |product| args[:brand] == product.brand }
+    all.select { |product| args[:brand] == product.brand || args[:name] == product.name }
   end
 
   def update(args = {})
