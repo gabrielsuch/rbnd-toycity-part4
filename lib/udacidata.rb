@@ -26,8 +26,9 @@ class Udacidata
     products
   end
 
-  def self.first
-    self.all[0]
+  def self.first(n=0)
+    return self.all.first if n == 0
+    self.all[0 .. n]
   end
 
 end
