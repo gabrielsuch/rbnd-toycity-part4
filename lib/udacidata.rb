@@ -51,4 +51,8 @@ class Udacidata
     deleted
   end
 
+  def self.where(args = {})
+    all.select { |product| args[:brand] == product.brand }
+  end
+
 end
