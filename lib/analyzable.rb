@@ -1,3 +1,8 @@
 module Analyzable
-  # Your code goes here!
+
+  def average_price(products)
+    total = products.inject(0) { |sum, product| sum + product.price.to_f }
+    (total / products.size).round(2)
+  end
+
 end
