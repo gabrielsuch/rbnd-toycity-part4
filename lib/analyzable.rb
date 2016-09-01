@@ -9,4 +9,8 @@ module Analyzable
     'Report has been printed'
   end
 
+  def count_by_brand(products)
+    products.each_with_object(Hash.new(0)) { |product, counters| counters[product.brand] += 1 }
+  end
+
 end
