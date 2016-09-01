@@ -31,4 +31,8 @@ class Udacidata
     self.all[0 .. n-1]
   end
 
+  def self.last
+    self.all.last
+  end
+
 end
