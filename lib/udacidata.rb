@@ -38,4 +38,16 @@ class Udacidata
     all.find { |product| product.id == id }
   end
 
+  def self.destroy(id)
+    csv_table = CSV.table(@@file)
+    deleted = find(id)
+    csv_table.delete_if { |product| product[:id] == id }
+
+    File.open(@@file, "w") do |writer|
+      writer.write(csv_table.to_csv)
+    end
+
+    deleted
+  end
+
 end
