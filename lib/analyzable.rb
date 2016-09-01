@@ -5,4 +5,8 @@ module Analyzable
     (total / products.size).round(2)
   end
 
+  def print_report(products)
+    'Report has been printed'
+  end
+
 end
