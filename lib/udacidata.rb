@@ -16,4 +16,8 @@ class Udacidata
     product
   end
 
+  def self.all
+    []
+  end
+
 end
