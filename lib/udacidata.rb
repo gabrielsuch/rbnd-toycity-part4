@@ -55,4 +55,12 @@ class Udacidata
     all.select { |product| args[:brand] == product.brand }
   end
 
+  def update(args = {})
+    @brand = args[:brand] if args[:brand]
+    @name = args[:name] if args[:name]
+    @price = args[:price] if args[:price]
+    Product.destroy(@id)
+    Product.create(id: @id, brand: @brand, name: @name, price: @price)
+  end
+
 end
