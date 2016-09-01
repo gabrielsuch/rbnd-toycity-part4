@@ -28,7 +28,7 @@ class Udacidata
 
   def self.first(n=0)
     return self.all.first if n == 0
-    self.all[0 .. n]
+    self.all[0 .. n-1]
   end
 
 end
