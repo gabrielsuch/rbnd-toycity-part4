@@ -17,7 +17,17 @@ class Udacidata
   end
 
   def self.all
-    []
+    products = []
+
+    CSV.foreach( @@file, headers: true ) do |line|
+      products << self.new( id: line["id"], brand: line["brand"], name: line["product"], price: line["price"] )
+    end
+
+    products
+  end
+
+  def self.first
+    self.all[0]
   end
 
 end
