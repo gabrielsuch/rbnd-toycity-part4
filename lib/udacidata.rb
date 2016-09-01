@@ -3,7 +3,7 @@ require_relative 'errors'
 require 'csv'
 
 class Udacidata
-  create_finder_methods :brand
+  create_finder_methods :brand, :name
 
   @@file = File.dirname(__FILE__) + "/../data/data.csv"
 
